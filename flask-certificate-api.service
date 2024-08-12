@@ -1,0 +1,15 @@
+# /lib/systemd/system/flask-certificate-api.service
+
+[Unit]
+Description=flask certificate api
+
+[Service]
+User=root
+Type=simple
+Restart=always
+RestartSec=5s
+WorkingDirectory=/root/flask-certificate-api
+ExecStart=/root/flask-certificate-api/uwsgi --ini uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target
